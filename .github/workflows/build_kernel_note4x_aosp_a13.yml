@@ -121,7 +121,7 @@ jobs:
           # Set Clang
           if [[ ${{ env.CLANG_SOURCE }} =~ git ]]; then
             git clone ${{ env.CLANG_SOURCE }} -b ${{ env.CLANG_BRANCH }} clang-custom --depth=1
-          elif [[ ${{ env.CLANG_SOURCE }} == *'.tar.gz' ]]; then
+          elif [[ ${{ env.CLANG_SOURCE }} == *.tar.gz ]]; then
              wget -O clang21.tar.gz https://github.com/ZyCromerZ/Clang/releases/download/21.0.0git-20250218-release/Clang-21.0.0git-20250218.tar.gz
             mkdir clang-custom
             tar -C clang-custom/ -zxvf clang21.tar.gz
